@@ -8,10 +8,14 @@ const DetailPage = () => {
     const {id} = useParams()
     const [datas, setDatas] = useState([])
     const navigate = useNavigate()
+    
     useEffect(() => {
         axios.get(`https://restcountries.com/v3.1/name/${id.replaceAll('-',' ')}`)
-        .then((res) => setDatas(res.data))
+        .then((res) => setDatas(res.data));
+
     },[])
+
+    
 
   return (
     <div className='w-full h-screen pl-24 pt-20'>
@@ -30,7 +34,7 @@ const DetailPage = () => {
                             </div>
                             <div className='text-[12px] flex gap-2'>
                                 <p className='w-10 p-1 border-2 rounded-xl text-center bg-[#8DD5CC] text-white'>{data.altSpellings[0]}</p>
-                                <p className='min-w-[20px] p-1 border-2 rounded-xl text-center bg-[#8DD5CC] text-white'>{data.altSpellings[1]}</p>
+                                <p className='min-w-[20px] p-1 border-2 rounded-xl text-center bg-[#8DD5CC] text-white'>{data.name.official}</p>
                                 <p className='min-w-[20px] p-1 border-2 rounded-xl text-center bg-[#8DD5CC] text-white'>{data.altSpellings[2]}</p>
                             </div>
 
