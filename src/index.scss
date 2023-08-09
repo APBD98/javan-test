@@ -1,0 +1,17 @@
+body {
+    background-color: #e6e6e6;
+    .scssClass {
+      text-align: center;
+      padding: 20px 0;
+      h2 {
+        color: white;
+        font-family: sans-serif;
+      }
+      table{
+        border-collapse: collapse;
+      }
+      th, td {
+        border: 1px solid black;
+      }
+    }
+  }
